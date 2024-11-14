@@ -1,0 +1,14 @@
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.AssemblyInfoInputs.cache
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.AssemblyInfo.cs
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.csproj.CoreCompileInputs.cache
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\gitup.exe
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\gitup.deps.json
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\gitup.runtimeconfig.json
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\gitup.dll
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\gitup.pdb
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.dll
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\refint\gitup.dll
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.pdb
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\gitup.genruntimeconfig.cache
+C:\Users\juanj\source\repos\test\obj\Release\net8.0\ref\gitup.dll

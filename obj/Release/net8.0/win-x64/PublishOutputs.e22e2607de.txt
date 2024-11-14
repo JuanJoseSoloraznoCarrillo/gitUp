@@ -1,0 +1,2 @@
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\win-x64\publish\gitup.pdb
+C:\Users\juanj\source\repos\test\bin\Release\net8.0\win-x64\publish\gitup.exe
