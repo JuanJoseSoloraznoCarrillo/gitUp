@@ -3,6 +3,8 @@
 namespace command;
 public class Program{
     private static string[] gitcommands = new string[] {"fetch","pull","add","commit","push"};
+    private static string equalpattern = new string('=', 85);
+    private static string dashpattern = new string('-', 30);
     public static int Main(string[] args){
         if(CheckArgs(args)==1) { 
             return 1;
@@ -26,29 +28,53 @@ public class Program{
                 }else if(gitCommand == "commit"){
                     _command_ = gitCommand + $" -m '\"{args[0]}\"'";
                 }
-                Console.WriteLine($"Running: {_command_}");
+                Console.WriteLine($">> Running: {_command_}");
                 consoleProcess.StartInfo.Arguments = $"-command git {_command_}";
                 consoleProcess.Start();
                 System.Threading.Thread.Sleep(1500);
                 string output = consoleProcess.StandardOutput.ReadToEnd();
                 string error = consoleProcess.StandardError.ReadToEnd();
                 consoleProcess.WaitForExit();
-                Console.WriteLine(output);
+                if(!error.Contains("SetValueInvocationException")){
+                    Console.WriteLine(error);
+                }
+                Console.Write(output);
             }
+            Console.WriteLine("[+] Remote GitHub repository has been updated");
             return 0; 
         }
     }
     private static int CheckArgs(string[] usrArgs){
         if(usrArgs.Length == 0){
-            Console.WriteLine("Usage: gitup <opt>[opt:list]");
+            Console.WriteLine("Usage:\n\tgitup.exe [arg:<commit>] [opt:<files>]");
+            return 1;
+        }
+        else if (usrArgs[0] == "-h" || usrArgs[0] == "--help" || usrArgs[0]=="-help" || usrArgs[0]=="help"){
+            Console.WriteLine("Usage:\n\tgitup.exe [arg:<commit>] [opt:<files>]");
+            return 1;
+        }
+        else if(usrArgs.Length > 1){
+            Console.WriteLine("[!] - Manage files not implemented yet.");
+            string wd= System.IO.Directory.GetCurrentDirectory();
+            Console.WriteLine(wd);
+            foreach(string file in usrArgs){
+                string rootPathFile = "";
+                rootPathFile = Path.Combine(rootPathFile, file);
+                bool exists = System.IO.File.Exists(rootPathFile);
+                if (exists){
+                    Console.WriteLine($"git add {rootPathFile}");
+                }
+                else{
+                    Console.WriteLine($"[!] File {rootPathFile} not found");
+                }
+            }
             return 1;
         }
         else{
-            Console.WriteLine("=============================================");
-            Console.WriteLine("------------- ! GitUp Command ! -------------");
-            Console.WriteLine("=============================================");
+            Console.WriteLine(equalpattern);
+            Console.WriteLine($"{dashpattern} ! GitUp Command ! {dashpattern}");
+            Console.WriteLine(equalpattern);
             return 0;
         }
-
     }
 }
