@@ -1,6 +1,18 @@
-﻿using System.Diagnostics;
+﻿/**
+ * GitUp - A simple C# program to automate the git commands.
+ * Author:  Solorzano, Juan Jose
+ * Date:    2021-09-30
+ * Version: 1.0
+ * Description: This program is a simple C# program that automates the git commands
+ * fetch, pull, add, commit, and push. The program receives a commit message
+ * as an argument and optionally a list of files to be added to the commit.
+ */
+
+// imports
+using System.Diagnostics;
 
 namespace command;
+
 public class Program{
     private static string[] gitcommands = new string[] {"fetch","pull","add","commit","push"};
     private static string equalpattern = new string('=', 85);
